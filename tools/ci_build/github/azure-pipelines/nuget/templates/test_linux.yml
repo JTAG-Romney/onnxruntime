@@ -17,13 +17,13 @@ jobs:
     value: '$(Build.BinariesDirectory)'
   steps:
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Signed NuGet'
     inputs:
       artifactName: 'drop-signed-nuget'
       targetPath: '$(Build.BinariesDirectory)/nuget-artifact'
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Linux CustomOp TestData'
     inputs:
       artifactName: 'drop-linux'

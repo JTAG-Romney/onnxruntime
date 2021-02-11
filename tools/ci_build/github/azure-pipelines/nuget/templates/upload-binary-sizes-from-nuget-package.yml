@@ -12,7 +12,7 @@ parameters:
   default: 'openmp'
 
 steps:
-- task: DownloadPipelineArtifact@0
+- task: DownloadPipelineArtifact@2
   displayName: 'Download Pipeline Artifact - Signed NuGet Package'
   inputs:
     artifactName: 'drop-signed-nuget'

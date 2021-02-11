@@ -121,25 +121,25 @@ jobs:
   - Linux_CI_GPU_Dev
   condition: succeeded()
   steps:
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - NuGet CUDA'
     inputs:
       artifactName: 'drop-nuget'
       targetPath: '$(Build.BinariesDirectory)/nuget-artifact'
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - NuGet DirectML'
     inputs:
       artifactName: 'drop-nuget-dml'
       targetPath: '$(Build.BinariesDirectory)/nuget-artifact-dml'
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - NuGet DirectML x86'
     inputs:
       artifactName: 'drop-win-dml-x86-zip'
       targetPath: '$(Build.BinariesDirectory)/nuget-artifact-dml'
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - Linux'
     inputs:
       artifactName: 'drop-linux'
@@ -254,7 +254,7 @@ jobs:
   steps:
   - template: ../../templates/set-version-number-variables-step.yml
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - Signed NuGet Package'
     inputs:
       artifactName: 'drop-signed-nuget'

@@ -15,13 +15,13 @@ jobs:
   - name: OnnxRuntimeBuildDirectory
     value: '$(Build.BinariesDirectory)'
   steps:
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download Pipeline Artifact - Signed NuGet'
     inputs:
       artifactName: 'drop-signed-nuget'
       targetPath: '$(Build.BinariesDirectory)/nuget-artifact'
 
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download OsX CustomOp test data'
     inputs:
       artifactName: 'drop-osx'

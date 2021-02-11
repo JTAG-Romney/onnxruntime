@@ -75,7 +75,7 @@ jobs:
   dependsOn: Android_CI
   condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
   steps:
-  - task: DownloadPipelineArtifact@0
+  - task: DownloadPipelineArtifact@2
     displayName: 'Download code coverage report'
     inputs:
       artifactName: 'coverage_rpt.txt'
