@@ -4,6 +4,10 @@ parameters:
   type: boolean
   default: true
 
+- name: IsMacOS
+  type: boolean
+  default: true
+  
 - name: DoCompliance
   displayName: Run Compliance Tasks?
   type: boolean
@@ -42,11 +46,6 @@ parameters:
 - name: BuildVariant
   type: string
   default: 'openmp'
-
-jobs:
-
-parameters:
-  IsMacOS : 'true'
 
 jobs:
 - job: NuGet_Test_MacOS
