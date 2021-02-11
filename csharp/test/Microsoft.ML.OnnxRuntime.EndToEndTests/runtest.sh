@@ -22,6 +22,7 @@ if [ $RunTestCsharp = "true" ]; then
   if [ $IsMacOS = "true" ]; then
     mkdir -p $BUILD_BINARIESDIRECTORY/models
 	ln -s $BUILD_SOURCESDIRECTORY/cmake/external/onnx/onnx/backend/test/data/node $BUILD_BINARIESDIRECTORY/models/opset14
+	ls -l $BUILD_BINARIESDIRECTORY/models
   fi
   # Run C# tests
   dotnet restore $BUILD_SOURCESDIRECTORY/csharp/test/Microsoft.ML.OnnxRuntime.EndToEndTests/Microsoft.ML.OnnxRuntime.EndToEndTests.csproj -s $LocalNuGetRepo -s https://api.nuget.org/v3/index.json
