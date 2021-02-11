@@ -19,7 +19,7 @@ cd $BUILD_SOURCESDIRECTORY
 echo "Current NuGet package version is $CurrentOnnxRuntimeVersion"
 
 if [ $RunTestCsharp = "true" ]; then
-  if [ $IsMacOS = "true" ]; then
+  if [[ $IsMacOS == "True" || $IsMacOS == "true" ]]; then
     mkdir -p $BUILD_BINARIESDIRECTORY/models
 	ln -s $BUILD_SOURCESDIRECTORY/cmake/external/onnx/onnx/backend/test/data/node $BUILD_BINARIESDIRECTORY/models/opset14
 	ls -l $BUILD_BINARIESDIRECTORY/models
